@@ -1,0 +1,17 @@
+{
+  "name": "@polkadot/app-my-did",
+  "private": true,
+  "version": "0.77.2-30",
+  "description": "A basic app that shows the ropes on customisation",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [
+    "Jaco Greeff <jacogr@gmail.com>"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "@polkadot/react-components": "0.77.2-30"
+  }
+}
