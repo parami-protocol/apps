@@ -54,6 +54,7 @@ import nodeSubsocial from './nodes/subsocial.svg';
 import nodeSubstrate from './nodes/substrate-hexagon.svg';
 import nodeUniarts from './nodes/uniarts.png';
 import nodeZero from './nodes/zero.svg';
+import nodeParami from './nodes/parami.png';
 // last-resort fallback, just something empty
 import emptyLogo from './empty.svg';
 
@@ -79,7 +80,8 @@ export const chainLogos: Record<string, unknown> = [
   ['Tick', chainRococoTick],
   ['Track', chainRococoTrack],
   ['Trick', chainRococoTrick],
-  ['Uniarts', nodeUniarts]
+  ['Uniarts', nodeUniarts],
+  ['Development', nodeParami], // top-left logo
 ].reduce((logos, [chain, logo]): Record<string, unknown> => ({
   ...logos,
   [(chain as string).toLowerCase()]: logo
@@ -133,7 +135,8 @@ export const nodeLogos: Record<string, unknown> = [
   ['Equilibrium Node', nodeEquilibrium],
   ['Equilibrium', nodeEquilibrium],
   ['SUBZΞRO', nodeZero],
-  ['Uniarts', nodeUniarts]
+  ['Uniarts', nodeUniarts],
+  ['Development', nodeParami]
 ].reduce((logos, [node, logo]): Record<string, unknown> => ({
   ...logos,
   [(node as string).toLowerCase().replace(/-/g, ' ')]: logo
@@ -195,7 +198,8 @@ export const namedLogos: Record<string, unknown> = {
   substrate: nodeSubstrate,
   uniarts: nodeUniarts,
   westend: nodePolkadot,
-  zero: nodeZero
+  zero: nodeZero,
+  dev: nodeZero,
 };
 
 // extension logos

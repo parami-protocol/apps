@@ -18,6 +18,7 @@ export function createCustom (t: TFunction): LinkOption[] {
     (typeof process !== 'undefined' ? process.env?.WS_URL : undefined) ||
     (typeof window !== 'undefined' ? (window as EnvWindow).process_env?.WS_URL : undefined)
   );
+  console.log("!!!!!!", WS_URL);
 
   return WS_URL
     ? [
