@@ -31,8 +31,8 @@ const disabledLog = new Map<string, string>();
 
 function createExternals (t: TFunction): ItemRoute[] {
   return [
-    { href: 'https://github.com/polkadot-js/apps', icon: 'code-branch', name: 'github', text: t<string>('nav.github', 'GitHub', { ns: 'apps-routing' }) },
-    { href: 'https://wiki.polkadot.network', icon: 'book', name: 'wiki', text: t<string>('nav.wiki', 'Wiki', { ns: 'apps-routing' }) }
+   // { href: 'https://github.com/polkadot-js/apps', icon: 'code-branch', name: 'github', text: t<string>('nav.github', 'GitHub', { ns: 'apps-routing' }) },
+    { href: 'https://parami.io', icon: 'home', name: 'homepage', text: t<string>('nav.wiki', 'Homepage', { ns: 'apps-routing' }) }
   ];
 }
 
@@ -102,7 +102,9 @@ function Menu ({ className = '' }: Props): React.ReactElement<Props> {
     developer: t('Developer'),
     governance: t('Governance'),
     network: t('Network'),
-    settings: t('Settings')
+    did: t('DID'),
+    ads: t('Ads'),
+    settings: t('Settings'),
   });
 
   const routeRef = useRef(createRoutes(t));
