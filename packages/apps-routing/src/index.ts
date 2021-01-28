@@ -27,6 +27,13 @@ import sudo from './sudo';
 import techcomm from './techcomm';
 import transfer from './transfer';
 import treasury from './treasury';
+import createDid from './create-did';
+import didTransfer from './did-transfer';
+import funds from './did-funds';
+import myDid from './my-did';
+import adsManagement from './ads-management';
+import adsPublish from './ads-publish';
+import didTeam from './did-team';
 
 export default function create (t: TFunction): Routes {
   return [
@@ -52,6 +59,13 @@ export default function create (t: TFunction): Routes {
     signing(t),
     sudo(t),
     js(t),
-    settings(t)
+    createDid(t),
+    myDid(t),
+    didTransfer(t),
+    funds(t),
+    didTeam(t),
+    adsManagement(t),
+    adsPublish(t),
+    settings(t),
   ];
 }
