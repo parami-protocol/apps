@@ -199,7 +199,7 @@ export const namedLogos: Record<string, unknown> = {
   uniarts: nodeUniarts,
   westend: nodePolkadot,
   zero: nodeZero,
-  dev: nodeZero,
+  dev: nodeParami,
 };
 
 // extension logos

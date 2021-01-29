@@ -38,7 +38,7 @@ function AdsMan ({ className, accountId }: Props): React.ReactElement<Props> {
             const data = await api.query.ads.adsRecords(num)
             if (data) {
               const tr: Object = data.toHuman();
-              
+
               records.push({
                 ...tr,
                 id: num,
@@ -65,7 +65,7 @@ function AdsMan ({ className, accountId }: Props): React.ReactElement<Props> {
           <span>单次点击费用</span>
           <span>操作</span>
         </li>
-        {records.length > 0 && 
+        {records.length > 0 &&
           (records as  AdsMetadata[]).map((item, index): React.ReactNode => (
             <li key={index} id={item.id}>
               <span>{ item.id }</span>
@@ -82,7 +82,7 @@ function AdsMan ({ className, accountId }: Props): React.ReactElement<Props> {
                     label='开始'
                     icon='play'
                     params={[item.id]}
-                    tx='ads.active'
+                    tx={api.tx.ads.active}
                     withSpinner
                     onSuccess={_onSuccess}
                   />
@@ -93,7 +93,7 @@ function AdsMan ({ className, accountId }: Props): React.ReactElement<Props> {
                     label='暂停'
                     icon='pause'
                     params={[item.id]}
-                    tx='ads.pause'
+                    tx={api.tx.ads.pause}
                     withSpinner
                     onSuccess={_onSuccess}
                   />
