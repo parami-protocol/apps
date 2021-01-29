@@ -1986,6 +1986,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@polkadot/app-ads-management@workspace:packages/page-ads-management":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-ads-management@workspace:packages/page-ads-management"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
+  languageName: unknown
+  linkType: soft
+
 "@polkadot/app-bounties@workspace:packages/page-bounties":
   version: 0.0.0-use.local
   resolution: "@polkadot/app-bounties@workspace:packages/page-bounties"
@@ -2034,6 +2043,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@polkadot/app-create-did@workspace:packages/page-create-did":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-create-did@workspace:packages/page-create-did"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
+  languageName: unknown
+  linkType: soft
+
 "@polkadot/app-democracy@workspace:packages/page-democracy":
   version: 0.0.0-use.local
   resolution: "@polkadot/app-democracy@workspace:packages/page-democracy"
@@ -2041,6 +2059,15 @@ __metadata:
     "@babel/runtime": ^7.12.5
     "@polkadot/react-components": ^0.77.2-30
     "@polkadot/react-query": ^0.77.2-30
+  languageName: unknown
+  linkType: soft
+
+"@polkadot/app-did-transfer@workspace:packages/page-did-transfer":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-did-transfer@workspace:packages/page-did-transfer"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
   languageName: unknown
   linkType: soft
 
@@ -2064,12 +2091,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@polkadot/app-funds@workspace:packages/page-funds":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-funds@workspace:packages/page-funds"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
+  languageName: unknown
+  linkType: soft
+
 "@polkadot/app-js@workspace:packages/page-js":
   version: 0.0.0-use.local
   resolution: "@polkadot/app-js@workspace:packages/page-js"
   dependencies:
     "@babel/runtime": ^7.12.5
     "@polkadot/react-components": ^0.77.2-30
+  languageName: unknown
+  linkType: soft
+
+"@polkadot/app-my-did@workspace:packages/page-my-did":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-my-did@workspace:packages/page-my-did"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
   languageName: unknown
   linkType: soft
 
@@ -2089,6 +2134,15 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.12.5
     "@polkadot/react-components": ^0.77.2-30
+  languageName: unknown
+  linkType: soft
+
+"@polkadot/app-publish@workspace:packages/page-publish":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-publish@workspace:packages/page-publish"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
   languageName: unknown
   linkType: soft
 
@@ -2158,6 +2212,15 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.12.5
     "@polkadot/react-components": ^0.77.2-30
+  languageName: unknown
+  linkType: soft
+
+"@polkadot/app-team@workspace:packages/page-team":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-team@workspace:packages/page-team"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/react-components": 0.77.2-30
   languageName: unknown
   linkType: soft
 
@@ -2474,7 +2537,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/react-components@^0.77.2-30, @polkadot/react-components@workspace:packages/react-components":
+"@polkadot/react-components@0.77.2-30, @polkadot/react-components@^0.77.2-30, @polkadot/react-components@workspace:packages/react-components":
   version: 0.0.0-use.local
   resolution: "@polkadot/react-components@workspace:packages/react-components"
   dependencies:
