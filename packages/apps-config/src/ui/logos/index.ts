@@ -82,6 +82,7 @@ export const chainLogos: Record<string, unknown> = [
   ['Trick', chainRococoTrick],
   ['Uniarts', nodeUniarts],
   ['Development', nodeParami], // top-left logo
+  ['Parami Testnet', nodeParami], // top-left logo
 ].reduce((logos, [chain, logo]): Record<string, unknown> => ({
   ...logos,
   [(chain as string).toLowerCase()]: logo
@@ -136,7 +137,8 @@ export const nodeLogos: Record<string, unknown> = [
   ['Equilibrium', nodeEquilibrium],
   ['SUBZΞRO', nodeZero],
   ['Uniarts', nodeUniarts],
-  ['Development', nodeParami]
+  ['Development', nodeParami],
+  ['Parami Testnet', nodeParami],
 ].reduce((logos, [node, logo]): Record<string, unknown> => ({
   ...logos,
   [(node as string).toLowerCase().replace(/-/g, ' ')]: logo
@@ -200,6 +202,7 @@ export const namedLogos: Record<string, unknown> = {
   westend: nodePolkadot,
   zero: nodeZero,
   dev: nodeParami,
+  'parami_testnet': nodeParami,
 };
 
 // extension logos
