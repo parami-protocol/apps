@@ -47,7 +47,6 @@ function Generate ({ className, accountId }: Props): React.ReactElement<Props> {
           />
           <Input
             maxLength={50}
-            onChange={setPubkey}
             label='DID Type'
             value='应用'
           />
