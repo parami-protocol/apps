@@ -2,6 +2,8 @@
 /* eslint-disable sort-keys */
 
 export default {
+  Address: "MultiAddress",
+  LookupSource: "MultiAddress",
   Did: "Vec<u8>",
   ExternalAddress: {
     btc: "Vec<u8>",
