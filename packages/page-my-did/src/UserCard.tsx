@@ -46,7 +46,7 @@ function UserCard ({ className, accountId }: Props): React.ReactElement<Props> {
     },
     [result]
   );
-  
+
   return (
     <div className={className}>
       <h3>我的DID</h3>
@@ -61,7 +61,7 @@ function UserCard ({ className, accountId }: Props): React.ReactElement<Props> {
       <h3>我的资产</h3>
       <Balance params={accountId} />
       <h3>我的抵押</h3>
-      {metadata?.locked_records ? metadata.locked_records.locked_funds : '0.000 PRM'}
+      {metadata?.locked_records ? metadata.locked_records.locked_funds : '0.000 AD3'}
     </div>
   );
 }

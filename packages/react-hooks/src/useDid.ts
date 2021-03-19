@@ -27,12 +27,12 @@ export function hexToDid(hex: string): string {
   if (isHex(hex)) {
     const bytes = Buffer.from(hex.slice(2), "hex");
     const address = bs58.encode(bytes);
-    did = `did:pra:${address}`;
+    did = `did:ad3:${address}`;
   } else {
     const hexStr = u8aToHex(hex);
     const bytes = Buffer.from(hexStr.slice(2), "hex");
     const address = bs58.encode(bytes);
-    did = `did:pra:${address}`;
+    did = `did:ad3:${address}`;
   }
   return did;
 }

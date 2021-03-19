@@ -19,12 +19,12 @@ interface Props {
 function Partner ({ className, accountId }: Props): React.ReactElement<Props> {
   const { api } = useApi();
   const userDoc = store.get('userDocs');
-  
+
   return (
     <div className={className}>
       <div className="desc">
         <h3>我的抵押</h3>
-        {userDoc?.locked_records ? userDoc.locked_records.locked_funds : '0.000 PRM'}
+        {userDoc?.locked_records ? userDoc.locked_records.locked_funds : '0.000 AD3'}
         <h3>成为共识合伙人，您将拥有以下特权</h3>
         <p className="desc">
           ·定制社群名称和logo，并在区块链上登记。<br/>
@@ -33,7 +33,7 @@ function Partner ({ className, accountId }: Props): React.ReactElement<Props> {
           ·如果您是区块链项目方，可以使用DID档案绑定自身主链地址，从而获取到用户的数字身份档案。
         </p>
         <p className="tips">
-          注：成为共识合伙人需要至少抵押 10 PRM<br/>
+          注：成为共识合伙人需要至少抵押 10 AD3<br/>
         </p>
         <Button.Group>
             <TxButton
