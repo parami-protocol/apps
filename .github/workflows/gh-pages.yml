@@ -1,0 +1,35 @@
+name: Publish Document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+      WS_URL: "wss://wallet.prabox.net/v2/ws"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - run: npm install -g yarn
+    - run: yarn
+    - run: yarn build:www
+
+    - run: echo -n apps.parami.io > ./packages/apps/build/CNAME
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./packages/apps/build
