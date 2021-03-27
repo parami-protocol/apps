@@ -42,7 +42,7 @@ function DidTransfer({ className, accountId }: Props): React.ReactElement<Props>
           <Button.Group>
             <TxButton
               accountId={accountId}
-              isDisabled={!amount || !did || !memo}
+              isDisabled={!amount || !did}
               icon="paper-plane"
               label="确认"
               params={[did, amount, memo]}
