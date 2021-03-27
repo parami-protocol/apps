@@ -2,38 +2,35 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import BN from 'bn.js';
-import React, { useCallback, useState } from 'react';
-import styled from 'styled-components';
-import { Button, InputBalance, Input, TxButton } from '@polkadot/react-components';
+import BN from "bn.js";
+import React, { useCallback, useState } from "react";
+import styled from "styled-components";
+import { Button, InputBalance, Input, TxButton } from "@polkadot/react-components";
+import { useApi } from "@polkadot/react-hooks";
 
 interface Props {
   className?: string;
   accountId?: string | null;
 }
 
-function Unlock ({ className, accountId }: Props): React.ReactElement<Props> {
-  const [amount, setAmount] = useState<BN | undefined | null>(new BN(10**15));
+function Unlock({ className, accountId }: Props): React.ReactElement<Props> {
+  const [amount, setAmount] = useState<BN | undefined | null>(new BN(10 ** 15));
+  const { api } = useApi();
 
   return (
     <section className={className}>
-      <div className='ui--row'>
-        <div className='large'>
+      <div className="ui--row">
+        <div className="large">
           <h2>赎回</h2>
-          <InputBalance
-            label='Amount to Unlock'
-            onChange={setAmount}
-            value={amount}
-            placeholder='请输入赎回金额'
-          />
+          <InputBalance label="Amount to Unlock" onChange={setAmount} value={amount} placeholder="请输入赎回金额" />
           <Button.Group>
             <TxButton
               accountId={accountId}
               isDisabled={!amount}
-              icon='send'
-              label='确认'
+              icon="lock-open"
+              label="确认"
               params={[amount]}
-              tx='did.unlock'
+              tx={api.tx.did.unlock}
               withSpinner
             />
           </Button.Group>
