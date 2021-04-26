@@ -149,15 +149,11 @@ export default (_theme: ThemeDef): string => `
       font-size: 1.75rem;
       font-weight: var(--font-weight-normal);
       line-height: 1.25rem;
-      padding: 0.75rem 1.5rem 0;
+      padding: 1.5rem 1.75rem 0;
       text-transform: lowercase;
 
       > label {
         margin-top: 0.5rem;
-      }
-
-      > h1 {
-        line-height: 1;
       }
     }
 
@@ -203,7 +199,7 @@ export default (_theme: ThemeDef): string => `
 
   /* modals aligned to top, not center */
   .ui.dimmer {
-    background-color: rgba(96, 96, 96, 0.5);
+    background-color: rgba(0,0,0,0.5);
     justify-content: flex-start;
   }
 

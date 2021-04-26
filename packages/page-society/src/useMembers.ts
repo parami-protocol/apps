@@ -10,10 +10,10 @@ import { useAccounts, useApi, useCall } from '@polkadot/react-hooks';
 
 function transform (allAccounts: string[], members: DeriveSocietyMember[]): OwnMembers {
   const allMembers = members
-    .filter((member) => !member.isSuspended)
-    .map(({ accountId }) => accountId.toString());
+    .filter((member): boolean => !member.isSuspended)
+    .map((member): string => member.accountId.toString());
   const ownMembers = allMembers
-    .filter((address) => allAccounts.includes(address));
+    .filter((address): boolean => allAccounts.includes(address));
 
   return { allMembers, isMember: ownMembers.length !== 0, ownMembers };
 }

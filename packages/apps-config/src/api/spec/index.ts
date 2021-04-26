@@ -15,6 +15,7 @@ import clover from './clover';
 import cloverRococo from './clover-rococo';
 import crab from './crab';
 import crust from './crust';
+import crustParachain from './crust-parachain';
 import testPara from './cumulus-test-parachain';
 import darwinia from './darwinia';
 import darwiniaParachain from './darwinia-parachain';
@@ -27,7 +28,6 @@ import encointerNodeNotee from './encointer-node-notee';
 import encointerNodeTeeproxy from './encointer-node-teeproxy';
 import encointerPara from './encointer-para';
 import equilibrium from './equilibrium';
-import galois from './galois';
 import hanonycash from './hanonycash';
 import hydrate from './hydrate';
 import idavoll from './idavoll';
@@ -58,7 +58,6 @@ import ternoa from './ternoa';
 import trustbase from './trustbase';
 import uniarts from './uniarts';
 import unique from './unique';
-import vln from './vln';
 import zenlink from './zenlink';
 import zero from './zero';
 
@@ -67,7 +66,6 @@ const spec: Record<string, OverrideBundleDefinition> = {
   Crab: crab,
   Darwinia: darwinia,
   Equilibrium: equilibrium,
-  VLN: vln,
   acala,
   'ares-parachain': aresParachain,
   bifrost: bifrost,
@@ -81,7 +79,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   clover,
   'clover-rococo': cloverRococo,
   crust,
-  'crust-parachain': crust,
+  'crust-parachain': crustParachain,
   'cumulus-test-parachain': testPara,
   'darwinia-parachain': darwiniaParachain,
   'datahighway-parachain': datahighwayParachain,
@@ -89,7 +87,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'dock-main-runtime': dock,
   'dock-testnet': dock,
   'dotmog-node': dotmog,
-  dusty4: dusty,
+  dusty3: dusty,
   edgeware,
   'encointer-node-notee': encointerNodeNotee,
   'encointer-node-teeproxy': encointerNodeTeeproxy,
@@ -107,7 +105,6 @@ const spec: Record<string, OverrideBundleDefinition> = {
   litentry,
   mandala: acala,
   'mashnet-node': kilt,
-  'mathchain-galois': galois,
   'moonbase-alphanet': moonbeam,
   moonbeam,
   'moonbeam-standalone': moonbeam,

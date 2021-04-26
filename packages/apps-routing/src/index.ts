@@ -14,7 +14,6 @@ import council from './council';
 import democracy from './democracy';
 import explorer from './explorer';
 import extrinsics from './extrinsics';
-import gilt from './gilt';
 import js from './js';
 import parachains from './parachains';
 import poll from './poll';
@@ -51,7 +50,6 @@ export default function create (t: TFunction): Routes {
     bounties(t),
     techcomm(t),
     parachains(t),
-    gilt(t),
     society(t),
     calendar(t),
     contracts(t),

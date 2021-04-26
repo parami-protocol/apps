@@ -28,10 +28,12 @@ function BountiesApp ({ basePath, className = '' }: Props): React.ReactElement<P
 
   return (
     <main className={`bounties--App ${className}`}>
-      <Tabs
-        basePath={basePath}
-        items={itemsRef.current}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          items={itemsRef.current}
+        />
+      </header>
       <Bounties/>
     </main>
   );

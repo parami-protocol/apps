@@ -134,9 +134,7 @@ function Import ({ className = '', onClose, onStatusChange }: Props): React.Reac
             value={password}
           />
         </Modal.Columns>
-        <Modal.Columns>
-          <ExternalWarning />
-        </Modal.Columns>
+        <ExternalWarning />
       </Modal.Content>
       <Modal.Actions onCancel={onClose}>
         <Button

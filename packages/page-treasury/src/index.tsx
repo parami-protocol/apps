@@ -52,10 +52,12 @@ function TreasuryApp ({ basePath }: Props): React.ReactElement<Props> {
   return (
     <main className='treasury--App'>
       <HelpOverlay md={basicMd as string} />
-      <Tabs
-        basePath={basePath}
-        items={items}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          items={items}
+        />
+      </header>
       <Switch>
         <Route path={`${basePath}/tips`}>
           <Tips

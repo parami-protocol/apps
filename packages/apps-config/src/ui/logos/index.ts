@@ -70,7 +70,6 @@ import nodeTernoa from './nodes/ternoa.svg';
 import nodeTrustBase from './nodes/trustbase.png';
 import nodeUniarts from './nodes/uniarts.png';
 import nodeUnique from './nodes/unique.png';
-import nodeVln from './nodes/valiu.png';
 import nodeZenlink from './nodes/zenlink.svg';
 import nodeZero from './nodes/zero.svg';
 import nodeParami from './nodes/parami.png';
@@ -118,8 +117,7 @@ export const chainLogos: Record<string, unknown> = [
   ['Parami Testnet', nodeParami], // top-left logo
   ['TrustBase PC1', nodeTrustBase],
   ['Uniarts', nodeUniarts],
-  ['Unique', chainUnique],
-  ['Vln', nodeVln]
+  ['Unique', chainUnique]
 ].reduce((logos, [chain, logo]): Record<string, unknown> => ({
   ...logos,
   [(chain as string).toLowerCase()]: logo
@@ -196,8 +194,7 @@ export const nodeLogos: Record<string, unknown> = [
   ['Zenlink Collator', nodeZenlink],
   ['SubDAO Collator', nodeSubDAO],
   ['Uniarts', nodeUniarts],
-  ['Unique Node', nodeUnique],
-  ['Vln', nodeVln]
+  ['Unique Node', nodeUnique]
 ].reduce((logos, [node, logo]): Record<string, unknown> => ({
   ...logos,
   [(node as string).toLowerCase().replace(/-/g, ' ')]: logo
@@ -283,7 +280,6 @@ export const namedLogos: Record<string, unknown> = {
   'ternoa-chaos': nodeTernoa,
   uniarts: nodeUniarts,
   unique: nodeUnique,
-  vln: nodeVln,
   westend: nodePolkadot,
   zero: nodeZero,
   dev: nodeParami,

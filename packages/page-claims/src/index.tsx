@@ -187,10 +187,12 @@ function ClaimsApp ({ basePath }: Props): React.ReactElement<Props> {
 
   return (
     <main>
-      <Tabs
-        basePath={basePath}
-        items={itemsRef.current}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          items={itemsRef.current}
+        />
+      </header>
       {!isOldClaimProcess && <Warning />}
       <h1>
         <Trans>Claim your <em>{TokenUnit.abbr}</em> tokens</Trans>

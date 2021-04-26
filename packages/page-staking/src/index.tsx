@@ -100,15 +100,17 @@ function StakingApp ({ basePath, className = '' }: Props): React.ReactElement<Pr
   return (
     <main className={`staking--App ${className}`}>
       <HelpOverlay md={basicMd as string} />
-      <Tabs
-        basePath={basePath}
-        hidden={
-          hasAccounts
-            ? undefined
-            : HIDDEN_ACC
-        }
-        items={items}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          hidden={
+            hasAccounts
+              ? undefined
+              : HIDDEN_ACC
+          }
+          items={items}
+        />
+      </header>
       <Summary
         isVisible={pathname === basePath}
         stakingOverview={stakingOverview}

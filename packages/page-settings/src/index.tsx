@@ -55,11 +55,13 @@ function SettingsApp ({ basePath, onStatusChange }: Props): React.ReactElement<P
   return (
     <main className='settings--App'>
       <HelpOverlay md={md as string} />
-      <Tabs
-        basePath={basePath}
-        hidden={hidden}
-        items={items}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          hidden={hidden}
+          items={items}
+        />
+      </header>
       <Switch>
         <Route path={`${basePath}/developer`}>
           <Developer
@@ -73,9 +75,7 @@ function SettingsApp ({ basePath, onStatusChange }: Props): React.ReactElement<P
         <Route path={`${basePath}/metadata`}>
           <Metadata />
         </Route>
-        <Route>
-          <General />
-        </Route>
+        <Route component={General} />
       </Switch>
     </main>
   );

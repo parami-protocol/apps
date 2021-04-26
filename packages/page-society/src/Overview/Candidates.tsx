@@ -6,26 +6,28 @@ import type { DeriveSocietyCandidate } from '@polkadot/api-derive/types';
 import React, { useRef } from 'react';
 
 import { Table } from '@polkadot/react-components';
+import { useApi, useCall } from '@polkadot/react-hooks';
 
 import { useTranslation } from '../translate';
 import Candidate from './Candidate';
 
 interface Props {
   allMembers: string[];
-  candidates?: DeriveSocietyCandidate[];
   className?: string;
   isMember: boolean;
   ownMembers: string[];
 }
 
-function Candidates ({ allMembers, candidates, className = '', isMember, ownMembers }: Props): React.ReactElement<Props> {
+function Candidates ({ allMembers, className = '', isMember, ownMembers }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
+  const { api } = useApi();
+  const candidates = useCall<DeriveSocietyCandidate[]>(api.derive.society.candidates);
 
   const headerRef = useRef([
     [t('candidates'), 'start'],
-    [t('bid kind'), 'start', 2],
+    [t('kind')],
     [t('value')],
-    [undefined, 'expand'],
+    [t('votes'), 'expand'],
     []
   ]);
 
