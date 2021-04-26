@@ -39,11 +39,13 @@ function AccountsApp ({ basePath, onStatusChange }: Props): React.ReactElement<P
   return (
     <main className='accounts--App'>
       <HelpOverlay md={basicMd as string} />
-      <Tabs
-        basePath={basePath}
-        hidden={(hasAccounts && !isIpfs) ? undefined : HIDDEN_ACC}
-        items={tabsRef.current}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          hidden={(hasAccounts && !isIpfs) ? undefined : HIDDEN_ACC}
+          items={tabsRef.current}
+        />
+      </header>
       <Switch>
         <Route path={`${basePath}/vanity`}>
           <Vanity

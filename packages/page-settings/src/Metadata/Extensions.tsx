@@ -57,7 +57,7 @@ function Extensions ({ chainInfo, className }: Props): React.ReactElement<Props>
       {extensions
         ? options.length !== 0 && (
           <>
-            <tr className='noBorder'>
+            <tr>
               <td>
                 <Dropdown
                   label={t<string>('upgradable extensions')}

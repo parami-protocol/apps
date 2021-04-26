@@ -3,14 +3,13 @@
 
 import type { Bid } from '@polkadot/types/interfaces';
 
-import React, { useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { AddressSmall, TxButton } from '@polkadot/react-components';
 import { useAccounts, useApi } from '@polkadot/react-hooks';
 import { FormatBalance } from '@polkadot/react-query';
 
 import { useTranslation } from '../translate';
-import BidType from './BidType';
 
 interface Props {
   index: number;
@@ -21,22 +20,22 @@ function BidRow ({ index, value: { kind, value, who } }: Props): React.ReactElem
   const { t } = useTranslation();
   const { api } = useApi();
   const { allAccounts } = useAccounts();
+  const [isBidder, setIsBidder] = useState(false);
 
-  const isBidder = useMemo(
-    (): boolean => {
-      const address = who.toString();
+  useEffect((): void => {
+    const address = who.toString();
 
-      return allAccounts.some((accountId) => accountId === address);
-    },
-    [allAccounts, who]
-  );
+    setIsBidder(allAccounts.some((accountId) => accountId === address));
+  }, [allAccounts, who]);
 
   return (
     <tr>
-      <td className='address all'>
+      <td className='all'>
         <AddressSmall value={who} />
       </td>
-      <BidType value={kind} />
+      <td className='number'>
+        {kind.type}
+      </td>
       <td className='number'>
         <FormatBalance value={value} />
       </td>

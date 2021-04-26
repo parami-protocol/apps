@@ -21,10 +21,12 @@ function ExtrinsicsApp ({ basePath }: Props): React.ReactElement<Props> {
 
   return (
     <main className='extrinsics--App'>
-      <Tabs
-        basePath={basePath}
-        items={itemsRef.current}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          items={itemsRef.current}
+        />
+      </header>
       <Selection />
     </main>
   );

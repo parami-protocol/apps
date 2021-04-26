@@ -49,10 +49,12 @@ function ParachainsApp ({ basePath, className }: Props): React.ReactElement<Prop
 
   return (
     <main className={className}>
-      <Tabs
-        basePath={basePath}
-        items={items}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          items={items}
+        />
+      </header>
       <Switch>
         <Route path={`${basePath}/auctions`}>
           <Auctions />

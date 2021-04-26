@@ -1,13 +1,18 @@
 {
   "name": "@polkadot/app-settings",
   "private": true,
-  "version": "0.85.1",
+  "version": "0.84.1",
+  "description": "Settings management",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@polkadot/apps-config": "^0.85.1",
-    "@polkadot/react-components": "^0.85.1",
-    "@polkadot/react-query": "^0.85.1",
+    "@polkadot/apps-config": "^0.84.1",
+    "@polkadot/react-components": "^0.84.1",
+    "@polkadot/react-query": "^0.84.1",
     "query-string": "^6.14.1"
   }
 }

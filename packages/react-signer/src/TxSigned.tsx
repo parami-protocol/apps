@@ -36,14 +36,7 @@ interface Props {
   requestAddress: string;
 }
 
-interface InnerTx {
-  innerHash: string | null;
-  innerTx: string | null;
-}
-
 const NOOP = () => undefined;
-
-const EMPTY_INNER: InnerTx = { innerHash: null, innerTx: null };
 
 let qrId = 0;
 
@@ -190,7 +183,7 @@ function TxSigned ({ className, currentItem, requestAddress }: Props): React.Rea
   const [senderInfo, setSenderInfo] = useState<AddressProxy>({ isMultiCall: false, isUnlockCached: false, multiRoot: null, proxyRoot: null, signAddress: requestAddress, signPassword: '' });
   const [signedOptions, setSignedOptions] = useState<Partial<SignerOptions>>({});
   const [signedTx, setSignedTx] = useState<string | null>(null);
-  const [{ innerHash, innerTx }, setCallInfo] = useState<InnerTx>(EMPTY_INNER);
+  const [multiCall, setMultiCall] = useState<string | null>(null);
   const [tip, setTip] = useState(BN_ZERO);
 
   useEffect((): void => {
@@ -200,21 +193,14 @@ function TxSigned ({ className, currentItem, requestAddress }: Props): React.Rea
 
   // when we are sending the hash only, get the wrapped call for display (proxies if required)
   useEffect((): void => {
-    const method = currentItem.extrinsic && (
-      senderInfo.proxyRoot
-        ? api.tx.proxy.proxy(senderInfo.proxyRoot, null, currentItem.extrinsic)
-        : currentItem.extrinsic
-    ).method;
-
-    setCallInfo(
-      method
-        ? {
-          innerHash: method.hash.toHex(),
-          innerTx: senderInfo.multiRoot
-            ? method.toHex()
-            : null
-        }
-        : EMPTY_INNER
+    setMultiCall(
+      currentItem.extrinsic && senderInfo.multiRoot
+        ? (
+          senderInfo.proxyRoot
+            ? api.tx.proxy.proxy(senderInfo.proxyRoot, null, currentItem.extrinsic)
+            : currentItem.extrinsic
+        ).method.toHex()
+        : null
     );
   }, [api, currentItem, senderInfo]);
 
@@ -381,24 +367,13 @@ function TxSigned ({ className, currentItem, requestAddress }: Props): React.Rea
                     signedTx={signedTx}
                   />
                 )}
-                {isSubmit && !senderInfo.isMultiCall && innerTx && (
-                  <Modal.Columns hint={t('The full call data that can be supplied to a final call to multi approvals')}>
+                {isSubmit && !senderInfo.isMultiCall && multiCall && (
+                  <Modal.Columns hint={t('The call data that can be supplied to a final call to multi approvals')}>
                     <Output
-                      isDisabled
+                      isFull
                       isTrimmed
                       label={t<string>('multisig call data')}
-                      value={innerTx}
-                      withCopy
-                    />
-                  </Modal.Columns>
-                )}
-                {isSubmit && innerHash && (
-                  <Modal.Columns hint={t('The call hash as calculated for this transaction')}>
-                    <Output
-                      isDisabled
-                      isTrimmed
-                      label={t<string>('call hash')}
-                      value={innerHash}
+                      value={multiCall}
                       withCopy
                     />
                   </Modal.Columns>

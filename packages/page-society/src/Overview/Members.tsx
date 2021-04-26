@@ -1,43 +1,48 @@
 // Copyright 2017-2021 @polkadot/app-society authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MapMember } from '../types';
+import type { DeriveSociety, DeriveSocietyMember } from '@polkadot/api-derive/types';
 
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 
 import { Table } from '@polkadot/react-components';
-import { useBestNumber } from '@polkadot/react-hooks';
+import { useApi, useCall } from '@polkadot/react-hooks';
 
 import { useTranslation } from '../translate';
 import Member from './Member';
 
 interface Props {
   className?: string;
-  mapMembers?: MapMember[];
+  info?: DeriveSociety;
 }
 
-function Members ({ className = '', mapMembers }: Props): React.ReactElement<Props> {
+function Members ({ className = '', info }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
-  const bestNumber = useBestNumber();
+  const { api } = useApi();
+  const members = useCall<DeriveSocietyMember[]>(api.derive.society.members);
 
   const headerRef = useRef([
     [t('members'), 'start', 3],
-    [t('voted on'), 'start'],
     [t('strikes')],
     []
   ]);
 
+  const filtered = useMemo(
+    () => (members || []).filter((member) => !info || !info.hasDefender || !member.accountId.eq(info.defender)),
+    [info, members]
+  );
+
   return (
     <Table
       className={className}
-      empty={mapMembers && t<string>('No active members')}
+      empty={info && t<string>('No active members')}
       header={headerRef.current}
     >
-      {mapMembers?.map((value): React.ReactNode => (
+      {filtered.map((member): React.ReactNode => (
         <Member
-          bestNumber={bestNumber}
-          key={value.key}
-          value={value}
+          isHead={info?.head?.eq(member.accountId)}
+          key={member.accountId.toString()}
+          value={member}
         />
       ))}
     </Table>

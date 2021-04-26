@@ -46,10 +46,12 @@ function TechCommApp ({ basePath, className }: Props): React.ReactElement<Props>
 
   return (
     <main className={className}>
-      <Tabs
-        basePath={basePath}
-        items={items}
-      />
+      <header>
+        <Tabs
+          basePath={basePath}
+          items={items}
+        />
+      </header>
       <Switch>
         <Route path={`${basePath}/proposals`}>
           <Proposals

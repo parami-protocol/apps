@@ -15,6 +15,7 @@ type ModalType = React.FC<ModalProps> & {
   Actions: React.FC<ActionsProps>;
   Columns: React.FC<ColumnsProps>;
   Content: typeof SUIModal.Content;
+  Header: typeof SUIModal.Header;
   Description: typeof SUIModal.Description;
 };
 
@@ -30,9 +31,7 @@ function ModalBase (props: ModalProps): React.ReactElement<ModalProps> {
       open={open}
     >
       {header && (
-        <div className='header'>
-          <h1>{header}</h1>
-        </div>
+        <SUIModal.Header>{header}</SUIModal.Header>
       )}
       {children}
     </SUIModal>
@@ -44,6 +43,7 @@ const Modal = React.memo(ModalBase) as unknown as ModalType;
 Modal.Actions = Actions;
 Modal.Columns = Columns;
 Modal.Content = SUIModal.Content;
+Modal.Header = SUIModal.Header;
 Modal.Description = SUIModal.Description;
 
 export default Modal;
