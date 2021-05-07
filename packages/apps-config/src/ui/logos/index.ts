@@ -18,6 +18,7 @@ import chainSnakenet from './chains/snakenet.svg';
 import chainUnique from './chains/unique.svg';
 import extensionPolkadotJs from './extensions/polkadot-js.svg';
 import externalCommonwealth from './external/commonwealth.png';
+import externalDotScanner from './external/dotscanner.png';
 import externalPolkascan from './external/polkascan.png';
 import externalPolkassembly from './external/polkassembly.png';
 import externalPolkastats from './external/polkastats.png';
@@ -51,6 +52,7 @@ import nodeIntegritee from './nodes/integritee.png';
 import nodeIpse from './nodes/ipse.png';
 import nodeJupiter from './nodes/jupiter.svg';
 import nodeKilt from './nodes/kilt.svg';
+import nodeKonomi from './nodes/konomi.png';
 import nodeKulupu from './nodes/kulupu.svg';
 import nodeLaminar from './nodes/laminar-circle.svg';
 import nodeLitentry from './nodes/litentry.png';
@@ -120,6 +122,7 @@ export const chainLogos: Record<string, unknown> = [
   ['Jupiter A1', nodeJupiter],
   ['Jupiter PC1', nodeJupiter],
   ['KILT PC1', nodeKilt],
+  ['Konomi', nodeKonomi],
   ['Kusama', chainKusama], // new name after CC3
   ['Kusama CC1', chainKusama],
   ['Kusama CC2', chainKusama],
@@ -353,6 +356,7 @@ export const namedLogos: Record<string, unknown> = {
   rococoIntegritee: nodeIntegritee,
   rococoJupiter: nodeJupiter,
   rococoKilt: nodeKilt,
+  rococoKonomi: nodeKonomi,
   rococoLaminar: nodeLaminar,
   rococoLitentry: nodeLitentry,
   rococoManta: nodeManta,
@@ -404,6 +408,7 @@ export const extensionLogos: Record<string, unknown> = {
 // external logos, i.e. for explorers
 export const externalLogos: Record<string, unknown> = {
   commonwealth: externalCommonwealth,
+  dotscanner: externalDotScanner,
   polkascan: externalPolkascan,
   polkassembly: externalPolkassembly,
   polkastats: externalPolkastats,
